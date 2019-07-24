@@ -7,10 +7,10 @@ import {
 import storage          from "redux-persist/lib/storage";
 import autoMergeLevel2  from "redux-persist/lib/stateReconciler/autoMergeLevel2";
 import thunk            from "redux-thunk";
-import reducers         from "./reducers";
+import reducers         from "./";
 
 const persistConfig = {
-    storage: FilesystemStorage,
+    storage: storage,
     key: "primary",
     whitelist: ["general"],
     stateReconciler: autoMergeLevel2,
