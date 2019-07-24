@@ -21,9 +21,6 @@ class App extends Component {
     super(props);
   }
   
-  onButtonPress = () => this.setState({ count: this.state.count + 1 });
-
-
   render() {
 
     const styles = StyleSheet.create({
