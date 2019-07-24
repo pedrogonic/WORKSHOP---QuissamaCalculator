@@ -36,10 +36,10 @@ adb reverse tcp:8081 tcp:8081 ## forwards node server in localhost:8081 to devic
 react-native run-android ## installs app
 ~~~~
 
-After installation, run this code anytime you want to start the app:
+After installation, run this code in your project foler anytime you want to start the app:
 
 ~~~~bash
-npm start
+npm start ## starts node development server
 ~~~~
 
 ## Tips on running
