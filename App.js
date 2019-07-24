@@ -19,10 +19,13 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-  }
-  
-  onButtonPress = () => this.setState({ count: this.state.count + 1 });
 
+    this.state = {
+      total: 0
+    }
+  }
+
+  incrementTotal = () => this.setState({ total: this.state.total + 1 });
 
   render() {
 
@@ -36,16 +39,16 @@ class App extends Component {
       text: {
         fontSize: 30,
         marginBottom: 10
-    }
+      }
     });
 
     return (
-      <View style={ styles.container }>
-        <View style={ styles.text }>
-          <Text>Botões</Text>
-          <Button color="#750202"/>
-          <Button color="#70016c"/>
-          <Button color="#101b6b"/>
+      <View style={styles.container}>
+        <View style={styles.text}>
+          <Text>Botões: {this.state.total}</Text>
+          <Button color="#750202" onChange={ this.incrementTotal }/>
+          <Button color="#70016c" onChange={ this.incrementTotal }/>
+          <Button color="#101b6b" onChange={ this.incrementTotal }/>
         </View>
       </View>
     );

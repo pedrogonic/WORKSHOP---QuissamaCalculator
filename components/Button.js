@@ -26,6 +26,7 @@ export default class Button extends Component {
 
     onButtonPress = () => {
         this.setState({ count: this.state.count + 1 });
+        this.props.onChange();
     }
 
     render() {
