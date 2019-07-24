@@ -4,22 +4,29 @@ import {
     StyleSheet,
     StatusBar,
     View,
+    Image,
     FlatList,
     Text,
+    TouchableOpacity,
 } from 'react-native';
 import Button               from '../components/Button';
 import Card                 from '../components/Card';
-import options              from '../Options'
+import { addMath }          from '../actions/general';
+import { connect }          from 'react-redux';
+import options              from '../Options';
+import History           from './History'
 
 
-export default class Home extends Component {
+
+class Home extends Component {
 
     constructor() {
         super();
 
         this.state = {
             expression: "",
-            result: ""
+            result: "",
+            modal: false
         }
     }
 
@@ -43,45 +50,39 @@ export default class Home extends Component {
 
         fetch(`https://api.mathjs.org/v4/?expr=${expression}`).then(r => r.json()).then(res => {
             this.setState({ result: res });
+            this.saveMath(res);
         }).catch((error) => {
             this.setState({ result: "Expressão inválida!" });
+            this.saveMath("Expressão inválida!");
         });
     }
 
+    saveMath = (result) => {
+        this.props.addMath({
+            expression: this.state.expression,
+            result: result,
+        });
+    }
+
+    toggleModal = () => this.setState({ modal: !this.state.modal });
+
     render() {
 
-        const styles = StyleSheet.create({
-            container: {
-                flex: 1,
-                justifyContent: "flex-end",
-                alignItems: "center",
-                backgroundColor: "#EFEFEF"
-            },
-            header: {
-                flex: 1,
-                width: "100%",
-                justifyContent: "center",
-                alignItems: "flex-end",
-                padding: 40
-            },
-            expression: {
-                fontSize: 27,
-                color: "rgba(75, 75, 75, 0.85)"
-            },
-            result: {
-                color: "#2C2C2C",
-                fontSize: 35,
-                fontWeight: "600",
-                marginTop: 8
-            }
-        });
-
-        const { expression, result } = this.state;
+        const { expression, result, modal } = this.state;
 
         return (
             <View style={styles.container}>
+                <History active={ modal } onClose={ this.toggleModal }/>
                 <StatusBar backgroundColor="rgba(0,0,0,0.15)" barStyle="dark-content"/>
                 <View style={ styles.header }>
+                    <TouchableOpacity style={ styles.buttonIcon } onPress={ this.toggleModal }
+                        activeOpacity={ 0.75 }>
+                        <Image
+                            resizeMode="cover"
+                            style={ styles.historyIcon }
+                            source={ require("../assets/ic_history.png") }
+                        />
+                    </TouchableOpacity>
                     <Text style={ styles.expression }>
                         { expression }
                     </Text>
@@ -111,3 +112,42 @@ export default class Home extends Component {
     };
 
 }
+
+
+export default connect(null, { addMath })(Home);
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "flex-end",
+        alignItems: "center",
+        backgroundColor: "#EFEFEF"
+    },
+    header: {
+        flex: 1,
+        width: "100%",
+        justifyContent: "center",
+        alignItems: "flex-end",
+        padding: 30,
+    },
+    expression: {
+        fontSize: 27,
+        color: "rgba(75, 75, 75, 0.85)"
+    },
+    result: {
+        color: "#2C2C2C",
+        fontSize: 35,
+        fontWeight: "600",
+        marginTop: 8
+    },
+    buttonIcon: {
+        position: "absolute",
+        top: 15,
+        left: 15,
+        opacity: 0.65
+    },
+    historyIcon: {
+        width: 30,
+        height: 30,
+    }
+});
