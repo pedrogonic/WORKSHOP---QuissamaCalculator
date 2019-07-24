@@ -13,15 +13,12 @@ import {
   View,
   Text,
 } from 'react-native';
+import Button from './components/Button';
 
 class App extends Component {
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      count: 0
-    }
   }
   
   onButtonPress = () => this.setState({ count: this.state.count + 1 });
@@ -34,27 +31,21 @@ class App extends Component {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        padding: 20
       },
       text: {
         fontSize: 30,
-      },
-      button: {
-        backgroundColor: "#FFF",
-        padding: 10,
-        borderRadius: 4,
-        elevation: 5,
-        marginTop: 10
-      }
+        marginBottom: 10
+    }
     });
 
     return (
       <View style={ styles.container }>
         <View style={ styles.text }>
-          <Text>{this.state.count}</Text>
-          <TouchableOpacity style={ styles.button }
-            onPress={ this.onButtonPress }>
-            <Text>Click me!</Text>
-          </TouchableOpacity>
+          <Text>Botões</Text>
+          <Button color="#750202"/>
+          <Button color="#70016c"/>
+          <Button color="#101b6b"/>
         </View>
       </View>
     );
