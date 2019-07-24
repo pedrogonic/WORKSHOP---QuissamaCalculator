@@ -24,8 +24,10 @@ class App extends Component {
     }
   }
   
-  onButtonPress = () => this.setState({ count: this.state.count + 1 });
 
+  componentDidMount = () => {
+    setInterval(() => {this.setState({ count: this.state.count + 1 })}, 1000);
+  }
 
   render() {
 
@@ -51,10 +53,6 @@ class App extends Component {
       <View style={ styles.container }>
         <View style={ styles.text }>
           <Text>{this.state.count}</Text>
-          <TouchableOpacity style={ styles.button }
-            onPress={ this.onButtonPress }>
-            <Text>Click me!</Text>
-          </TouchableOpacity>
         </View>
       </View>
     );
