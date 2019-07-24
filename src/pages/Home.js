@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
 
 import React, { Component } from 'react';
 import {
@@ -16,103 +9,13 @@ import {
 } from 'react-native';
 import Button               from '../components/Button';
 import Card                 from '../components/Card';
+import options              from '../Options'
 
 
 export default class Home extends Component {
 
     constructor() {
         super();
-
-        this.options = [
-            {
-                text: "C",
-                color: "#E6E6E6"
-            },
-            {
-                text: "(",
-                color: "#E6E6E6"
-            },
-            {
-                text: ")",
-                color: "#E6E6E6"
-            },
-            {
-                text: "×",
-                color: "#ED1E79"
-            },
-            {
-                text: "1",
-                color: "transparent",
-                flat: true
-            },
-            {
-                text: "2",
-                color: "transparent",
-                flat: true
-            },
-            {
-                text: "3",
-                color: "transparent",
-                flat: true
-            },
-            {
-                text: "−",
-                color: "#F15a24",
-            },
-            {
-                text: "4",
-                color: "transparent",
-                flat: true
-            },
-            {
-                text: "5",
-                color: "transparent",
-                flat: true
-            },
-            {
-                text: "6",
-                color: "transparent",
-                flat: true
-            },
-            {
-                text: "÷",
-                color: "#009245",
-            },
-            {
-                text: "7",
-                color: "transparent",
-                flat: true
-            },
-            {
-                text: "8",
-                color: "transparent",
-                flat: true
-            },
-            {
-                text: "9",
-                color: "transparent",
-                flat: true
-            },
-            {
-                text: "+",
-                color: "#FF0000",
-            },
-            {
-                text: "0",
-                color: "transparent",
-                flat: true
-            },
-            {
-                text: ".",
-                color: "transparent",
-                flat: true
-            },
-            {
-                text: "=",
-                color: "#39B54A",
-                size: 160
-            },
-        ];
 
         this.state = {
             expression: "",
@@ -190,7 +93,7 @@ export default class Home extends Component {
                     <FlatList
                         columnWrapperStyle={{ justifyContent: "space-around" }}
                         numColumns={4}
-                        data={this.options}
+                        data={options}
                         keyExtractor={(item) => item.text}
                         renderItem={({ item }) => (
                             <Button
