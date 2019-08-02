@@ -72,7 +72,7 @@ Checkout branch lessons/08!
 - [x] 06 - Redux (Global state)
 - [x] 07 - Pagination (Single page apps are useless!)
 - [x] 08 - Building (Carry your app around)
-- [] 09 - Finish documentation (NOTES.md)
+- [ ] 09 - Finish documentation (NOTES.md)
 
 
 ## How to follow the lessons
