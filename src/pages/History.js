@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import {
-    TouchableWithoutFeedback,
     StyleSheet,
     FlatList,
-    Modal,
     View,
     Text,
 }                   from "react-native";
@@ -11,38 +9,25 @@ import { connect }  from "react-redux";
 
 class History extends Component {
     render() {
-        const { history, active, onClose } = this.props;
-
-        console.log(history);
+        const { history } = this.props;
 
         return (
-            <Modal
-                animationType="fade"
-                transparent={ true }
-                visible={ active }
-                onRequestClose={ onClose }>
-                <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-                    <TouchableWithoutFeedback onPress={ onClose }>
-                        <View style={ styles.overlay }/>
-                    </TouchableWithoutFeedback>
-                    <View style={ styles.container }>
-                        {(history.length === 0) ? (
-                            <Text>Não existem dados a serem exibidos</Text>
-                        ) : (
-                            <FlatList
-                                data={ history }
-                                keyExtractor={(item, index) => `${item.text}_${index}` }
-                                renderItem={({ item }) => (
-                                    <View style={ styles.row }>
-                                        <Text>{ item.expression }</Text>
-                                        <Text>{ item.result }</Text>
-                                    </View>
-                                )}
-                            />
+            <View style={ styles.container }>
+                {(history.length === 0) ? (
+                    <Text>Não existem dados a serem exibidos</Text>
+                ) : (
+                    <FlatList
+                        data={ history }
+                        keyExtractor={(item, index) => `${item.text}_${index}` }
+                        renderItem={({ item }) => (
+                            <View style={ styles.row }>
+                                <Text>{ item.expression }</Text>
+                                <Text>{ item.result }</Text>
+                            </View>
                         )}
-                    </View>
-                </View>
-            </Modal>
+                    />
+                )}
+            </View>
         )
     }
 }
@@ -54,17 +39,9 @@ const mapStateToProps = (state, props) => ({
 export default connect(mapStateToProps)(History);
 
 const styles = StyleSheet.create({
-    overlay: {
-        position: "absolute",
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        backgroundColor: "rgba(0,0,0,.6)",
-        flex: 1
-    },
     container: {
-        width: "80%",
+        flex: 1,
+        width: "100%",
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#FFF",

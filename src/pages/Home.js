@@ -8,25 +8,24 @@ import {
     FlatList,
     Text,
     TouchableOpacity,
-} from 'react-native';
+}                           from 'react-native';
+import { Actions }          from "react-native-router-flux";
 import Button               from '../components/Button';
 import Card                 from '../components/Card';
 import { addMath }          from '../actions/general';
 import { connect }          from 'react-redux';
 import options              from '../Options';
-import History           from './History'
+import History              from './History'
 
 
 
 class Home extends Component {
-
     constructor() {
         super();
 
         this.state = {
             expression: "",
-            result: "",
-            modal: false
+            result: ""
         }
     }
 
@@ -36,7 +35,7 @@ class Home extends Component {
         if (v === "=")
             return this.getResult();
 
-        return this.setState({ 
+        return this.setState({
             expression: v === 'C' ? '' : this.state.expression + v,
             result: v === 'C' ? '' : result
         })
@@ -64,18 +63,22 @@ class Home extends Component {
         });
     }
 
-    toggleModal = () => this.setState({ modal: !this.state.modal });
+    openHistory = () => Actions.history();
+
+    backPage = () => Actions.pop();
 
     render() {
 
-        const { expression, result, modal } = this.state;
+        const { expression, result } = this.state;
 
         return (
             <View style={styles.container}>
-                <History active={ modal } onClose={ this.toggleModal }/>
                 <StatusBar backgroundColor="rgba(0,0,0,0.15)" barStyle="dark-content"/>
                 <View style={ styles.header }>
-                    <TouchableOpacity style={ styles.buttonIcon } onPress={ this.toggleModal }
+                    <TouchableOpacity style={ styles.backButton } onPress={ this.backPage }>
+                        <Text style={{ fontSize: 17 }}>Voltar</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={ styles.buttonIcon } onPress={ this.openHistory }
                         activeOpacity={ 0.75 }>
                         <Image
                             resizeMode="cover"
@@ -140,10 +143,15 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         marginTop: 8
     },
-    buttonIcon: {
+    backButton: {
         position: "absolute",
         top: 15,
         left: 15,
+    },
+    buttonIcon: {
+        position: "absolute",
+        top: 15,
+        right: 15,
         opacity: 0.65
     },
     historyIcon: {

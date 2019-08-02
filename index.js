@@ -4,7 +4,7 @@
 
 import React, { Component } from 'react';
 import {AppRegistry}        from 'react-native';
-import Home                 from './src/pages/Home';
+import Calculator           from './src/pages/Calculator';
 import {name as appName}    from './app.json';
 
 // Redux
@@ -17,7 +17,7 @@ export default class App extends Component {
         return (
             <Provider store={ store }>
               <PersistGate loading={ null } persistor={ persistor }>
-                  <Home />
+                  <Calculator />
               </PersistGate>
             </Provider>
         );
