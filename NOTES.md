@@ -65,4 +65,3 @@ Quando recebe nova props de fora.
 ## TODO
 
 - [] Touchable opacity
-- [] Shadow (elevation)
