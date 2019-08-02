@@ -41,3 +41,32 @@ import { notDefaultExport1, notDefaultExport1 } from 'path/to/component' }
 notDefaultExport1.method(); // executing method defined in another file;
 ~~~~
 
+## Styling
+
+### Creating shadows
+
+#### Android
+
+~~~~css
+componentWithShadow: {
+    elevation: 5,
+}
+~~~~
+
+#### iOS
+
+~~~~css
+componentWithShadow: {
+    shadowColor: "#000",
+    shadowOffset: {
+        width: 0,
+        height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84
+}
+~~~~
+
+## TODO
+
+- [] ?
