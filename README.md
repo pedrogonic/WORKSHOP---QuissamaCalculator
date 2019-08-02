@@ -60,7 +60,7 @@ To debug your application, you can enable Remote JS Debugging in the menu. This 
 
 ## Building
 
-{ TODO }
+Checkout branch lessons/08!
 
 ## Lessons
 
@@ -70,7 +70,9 @@ To debug your application, you can enable Remote JS Debugging in the menu. This 
 - [x] 04 - Props (Lifecycles)
 - [x] 05 - Calculator (Let's do this!)
 - [x] 06 - Redux (Global state)
-- [ ] 07 - Building (Carry your app around)
+- [x] 07 - Pagination (Single page apps are useless!)
+- [x] 08 - Building (Carry your app around)
+- [] 09 - Finish documentation (NOTES.md)
 
 
 ## How to follow the lessons
