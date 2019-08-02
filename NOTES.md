@@ -60,3 +60,9 @@ Antes dele ser atualizado vc consegue comparar as infopramacoes e tratar de algu
 ### ComponentWillReceiveProps(nextProps)
 
 Quando recebe nova props de fora.
+
+
+## TODO
+
+Touchable opacity
+Shadow (elevation)
