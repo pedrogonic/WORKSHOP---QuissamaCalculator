@@ -4,21 +4,43 @@ This project was created as a step by step tutorial on React Native Apps.
 We developed a calculator as a prototype app and reviewed several React and React-Native concepts.
 The tutorial was built as an Android App, but the exact code and examples should work for iOS.
 
-## Installation
+---
 
-### Official
+<p style="font-weight:600; font-size:1.5em">Authors</p>
+
+- [Lucas Craveiro Paes](https://github.com/lucascraveiropaes)
+- [Pedro Goñi Coelho](https://github.com/pedrogonic)
+
+<p style="font-weight:600; font-size:1.5em">Table of contents</p>
+
+<!-- TOC depthFrom:2 -->
+
+- [1. Installation](#1-installation)
+    - [1.1. Official](#11-official)
+    - [1.2. Dependencies](#12-dependencies)
+    - [1.3. Overview](#13-overview)
+- [2. Tips on running](#2-tips-on-running)
+- [3. Building](#3-building)
+- [4. How to follow the lessons](#4-how-to-follow-the-lessons)
+- [5. Progress](#5-progress)
+
+<!-- /TOC -->
+
+## 1. Installation
+
+### 1.1. Official
 
 You can follow the process in the following link:
 <https://facebook.github.io/react-native/docs/getting-started.html>
 
-### Dependencies
+### 1.2. Dependencies
 
 * Node
 * React Native CLI
 * Java SE Development Kit (Android)
 * Android Studio (Android)
 
-### Overview
+### 1.3. Overview
 
 With all dependencies installed and configured, open the terminal of your preference, change directory to the parent folder where you want the project to be located, and run
 
@@ -42,7 +64,7 @@ After installation, run this code in your project foler anytime you want to star
 npm start ## starts node development server
 ~~~~
 
-## Tips on running
+## 2. Tips on running
 
 After saving your files, you can immediately view your changes in the device by enabling Live/Hot Reloading. This can be enabled in the Developer Menu.
 Otherwise, simply hit reload in the Developer Menu.
@@ -58,11 +80,15 @@ This sends the KEYCODE_MENU value to the device which ends up opening the menu.
 
 To debug your application, you can enable Remote JS Debugging in the menu. This opens a new tab in Chrome. There, you can open the dev console (F12 or Shift+Ctrl+I in Windows) and check your console.log()'s in the console tab.
 
-## Building
+## 3. Building
 
 Checkout branch lessons/08!
 
-## Lessons
+## 4. How to follow the lessons
+
+Each lesson has a branch under lessons/ in the repository. Checkout each branch and open the NOTES.md file to understand the covered concepts.
+
+## 5. Progress
 
 - [x] 01 - Counter (Basics)
 - [x] 02 - Count Button (Start to componentize)
@@ -73,8 +99,3 @@ Checkout branch lessons/08!
 - [x] 07 - Pagination (Single page apps are useless!)
 - [x] 08 - Building (Carry your app around)
 - [ ] 09 - Finish documentation (NOTES.md)
-
-
-## How to follow the lessons
-
-Each lesson has a branch under lessons/ in the repository. Checkout each branch and open the notes.txt file to understand the covered concepts.
