@@ -6,14 +6,12 @@ The tutorial was built as an Android App, but the exact code and examples should
 
 ---
 
-<p style="font-weight:600; font-size:1.5em">Authors</p>
+## Authors
 
 - [Lucas Craveiro Paes](https://github.com/lucascraveiropaes)
 - [Pedro Goñi Coelho](https://github.com/pedrogonic)
 
-<p style="font-weight:600; font-size:1.5em">Table of contents</p>
-
-<!-- TOC depthFrom:2 -->
+## Table of contents
 
 - [1. Installation](#1-installation)
     - [1.1. Official](#11-official)
@@ -23,8 +21,6 @@ The tutorial was built as an Android App, but the exact code and examples should
 - [3. Building](#3-building)
 - [4. How to follow the lessons](#4-how-to-follow-the-lessons)
 - [5. Progress](#5-progress)
-
-<!-- /TOC -->
 
 ## 1. Installation
 
